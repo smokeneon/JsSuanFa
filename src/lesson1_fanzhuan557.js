@@ -13,8 +13,24 @@
 链接：https://leetcode-cn.com/problems/reverse-words-in-a-string-iii
 
  */
-function fanzhuan557(str){
-    return str.split(' ').map((item)=>{
+
+//方法一
+// function fanzhuan557(str){
+//     return str.split(' ').map((item)=>{
+//         return item.split('').reverse().join('');
+//     }).join(' ');
+// }
+
+//方法二 使用正则
+// function fanzhuan557(str) {
+//     return str.split(/\s/g).map((item) => {
+//         return item.split('').reverse().join('');
+//     }).join(' ');
+// }
+
+//方法三　使用match识别单词 \w就是识别单词加‘
+function fanzhuan557(str) {
+    return str.match(/[\w']+/g).map((item) => {
         return item.split('').reverse().join('');
     }).join(' ');
 }
